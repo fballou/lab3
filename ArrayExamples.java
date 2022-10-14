@@ -33,27 +33,40 @@ public class ArrayExamples {
       if(num < lowest) { lowest = num; }
     }
 
-    double[] temp = new double[arr.length];
+    double[] temp = new double[arr.length - 1];
+    // int index = 0;
+    // for (int i = 0; i < temp.length; i++) {
+    //   if (arr[i] == lowest) {
+    //     break;
+    //   }
+    //   else {
+    //     temp[i] = arr[i];
+    //     index += 1;
+    //   }
+    // }
+
+    // for (int i = index; i < temp.length; i++) {
+    //   temp[i] = arr[i];
+    // }
+    boolean reached = false;
     int index = 0;
-    for (int i = 0; i < temp.length; i++) {
-      if (arr[i] == lowest) {
-        break;
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] == lowest && reached == false) {
+        reached = true;
+        continue;
       }
       else {
-        temp[i] = arr[i];
+        temp[index] = arr[i];
         index += 1;
       }
-    }
 
-    for (int i = index; i < temp.length; i++) {
-      temp[i] = arr[i];
     }
 
     double sum = 0;
     for(double num: temp) {
       sum += num;
     }
-    return sum / (temp.length-1);
+    return sum / (temp.length);
   }
 
 

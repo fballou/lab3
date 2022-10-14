@@ -63,7 +63,7 @@ public class ArrayTests {
   }
 
   @Test
-  public void testAverageDupes() { //failed
+  public void testAverageDupes() { //failed. now passes
     double[] input = {2.0, 2.0, 2.0, 4.0, 3.5};
     double expected = 2.875;
     double delta = 0.1;
